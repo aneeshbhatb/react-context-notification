@@ -46,14 +46,39 @@
   justify-content: space-between;
 }
 
-.primary-btn {
-  background-color: #7e068d;
-  color: white;
+.btn {
   cursor: pointer;
   border: none;
   border-radius: 4px;
   padding: 15px 25px;
   font-size: 1.2rem;
+}
+
+.btn.primary {
+  background-color: #7e068d;
+  color: white;
+}
+
+.btn.secondary {
+  background-color: #7e068d36;
+  color: white;
+  border: 1px solid #7e068d
+}
+
+.grid {
+  display: grid;
+}
+
+.justify-stretch {
+  justify-items: stretch;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.row-1 {
+  grid-row: 1 / span 1;
 }
 
 button {

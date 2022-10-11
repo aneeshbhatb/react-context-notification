@@ -19,6 +19,8 @@ export const reducer = (state, action) => {
       ];
     case "CLOSE":
       return state.filter((t) => t.id !== action.payload.id);
+    case "CLEAR":
+      return [];
     default:
       return state;
   }

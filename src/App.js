@@ -3,7 +3,7 @@ import "./App.css";
 import { useNotificationContext } from "./Components/Common/Notification/context";
 
 function App() {
-  const { notify } = useNotificationContext();
+  const { notification, notify } = useNotificationContext();
 
   const renderNotificationMessage = (message) => {
     return (
@@ -24,14 +24,32 @@ function App() {
     });
   };
 
+  const clearNotifications = () => {
+    notify({
+      type: "CLEAR",
+    });
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>React Notification</p>
-        <button onClick={showNotification} className="primary-btn">
-          Show Notification
-        </button>
+        <div className="grid justify-stretch gap-4">
+          <button onClick={showNotification} className="btn primary row-1">
+            Show Notification
+          </button>
+          {notification.length ? (
+            <button
+              onClick={clearNotifications}
+              className="btn secondary row-1"
+            >
+              Clear all
+            </button>
+          ) : (
+            <></>
+          )}
+        </div>
       </header>
     </div>
   );
