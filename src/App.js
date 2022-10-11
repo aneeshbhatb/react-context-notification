@@ -1,22 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useNotificationContext } from "./Components/Common/Notification/context";
 
 function App() {
+  const { notify } = useNotificationContext();
+
+  const renderNotificationMessage = (message) => {
+    return (
+      <div>
+        <strong>{message}</strong>
+      </div>
+    );
+  };
+
+  const showNotification = () => {
+    notify({
+      type: "OPEN",
+      payload: {
+        id: `${performance.now()}`,
+        title: "Title",
+        message: renderNotificationMessage("Hello World"),
+      },
+    });
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>React Notification</p>
+        <button onClick={showNotification} className="primary-btn">
+          Show Notification
+        </button>
       </header>
     </div>
   );

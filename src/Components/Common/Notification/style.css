@@ -1,0 +1,52 @@
+.notification-container {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    max-height: 95vh;
+    overflow-x: hidden;
+    padding-right: 5px;
+}
+
+.each-notification {
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    padding: 15px;
+    background: white;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.container-scroll {
+    scroll-behavior: smooth;
+}
+
+/* width */
+.container-scroll::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.container-scroll::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+/* Track */
+.container-scroll::-webkit-scrollbar-track:hover {
+    background: transparent;
+}
+
+.container-scroll::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 10px;
+}
+
+.container-scroll:hover::-webkit-scrollbar-thumb {
+    background: #d6d6d6;
+}
+
+/* Handle on hover */
+.container-scroll::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
